@@ -1,0 +1,188 @@
+:root {
+  --padding-x: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  outline: 1px solid red;
+}
+
+/* Mobile First */
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #c0c0c0;
+}
+
+.navbar {
+  height: 2rem;
+  padding: 0 var(--padding-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 10px #00000044;
+}
+
+.navbar strong {
+  font-size: 0.9rem;
+}
+
+.navbar-links {
+  display: flex;
+  column-gap: 5px;
+  list-style-type: none;
+}
+
+.navbar-links a {
+  padding: 3px 3px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: black;
+  border-radius: 5px;
+  transition-property: color, background-color;
+  transition-duration: 200ms;
+}
+
+.navbar-links a:hover {
+  color: white;
+  background-color: black;
+}
+
+/* main content responsive */
+.content-container {
+  flex-grow: 1;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  font-size: 0.8rem;
+  margin-top: 40px;
+}
+
+main {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+.text-box {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.text-box-right {
+  background-color: #404040;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+}
+
+.link-container {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-button {
+  width: auto;
+  padding: 10px 80px;
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* margin-left: 1000px; warning! mala práctica */
+}
+
+/* end of main content responsive */
+
+footer {
+  padding: 5px; /* Añade un relleno para mejorar la apariencia en dispositivos pequeños */
+  text-align: center;
+  background-color: transparent;
+}
+
+@media (min-width: 400px) {
+  :root {
+    --padding-x: 30px;
+  }
+}
+
+@media (min-width: 600px) {
+  :root {
+    --padding-x: 100px;
+  }
+
+  .navbar {
+    height: 2.5rem;
+  }
+
+  .navbar strong {
+    font-size: 1rem;
+  }
+
+  .navbar-links a {
+    padding: 5px 8px;
+  }
+
+  main {
+    padding: 0 30px;
+  }
+
+  footer {
+    padding: 10px; /* Ajusta el relleno para dispositivos más pequeños si es necesario */
+  }
+}
+
+@media (min-width: 800px) {
+  main {
+    padding: 30px;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .image-container {
+    padding-bottom: 90px;
+  }
+
+  .text-container {
+    padding: 0 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .text-container .text-box {
+    margin-bottom: 0;
+    flex-grow: 1;
+  }
+
+  .link-container {
+    justify-content: end;
+  }
+}
